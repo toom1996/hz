@@ -86,6 +86,9 @@ $config = [
                     'extraPatterns' => [
                         'GET index' => 'index',
                         'GET get_info' => 'get_info',
+                        'GET login-qrcode' => 'login-qrcode', //获取二维码
+                        'POST wechat-login' => 'wechat-login',
+
                     ],
                 ],
             ]

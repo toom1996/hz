@@ -64,25 +64,26 @@ class SiteController extends OnAuthController
      *
      * @var array
      */
-    protected $optional = ['wechat-login'];
+    protected $optional = ['wechat-login', 'login-qrcode'];
 
     /**
-     * 登录根据用户信息返回accessToken
-     *
+     * 获取二维码
+     */
+    public function actionLoginQrcode()
+    {
+        $ticket_data = Yii::$app->wechat->app->qrcode->temporary();
+        $json_data = json_decode($ticket_data,true);
+        return Yii::$app->wechat->app->qrcode->url($json_data['ticket']);
+    }
+
+    /**
+     * 微信扫码登录
      * @return array|bool
      * @throws \Exception
      */
     public function actionWechatLogin()
     {
-        echo 11;die;
-//        $model = new LoginForm();
-//        $model->attributes = Yii::$app->request->post();
-//        if ($model->validate()) {
-//            return Yii::$app->services->apiAccessToken->getAccessToken($model->getUser(), $model->group);
-//        }
-//
-//        // 返回数据验证失败
-//        return ResultDataHelper::api(422, $this->getError($model));
+
     }
 
 
