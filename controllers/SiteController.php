@@ -94,7 +94,7 @@ class SiteController extends OnAuthController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return '日';
     }
 
     /**

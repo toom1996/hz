@@ -38,13 +38,6 @@ class HttpSignAuth extends Behavior
      */
     public function beforeAction($event)
     {
-        $data = Yii::$app->request->get();
-        $user = Userprofile::find()->where([
-            'token' => $data['token']
-        ])->one();
-        if (!$user) {
-            throw new Exception('token异常');
-        }
-        return true;
+
     }
 }
