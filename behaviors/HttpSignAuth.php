@@ -2,7 +2,7 @@
 
 namespace app\behaviors;
 
-use app\models\user\ApiUserprofile;
+use app\models\user\Userprofile;
 use Yii;
 use yii\base\Behavior;
 use yii\db\Exception;
@@ -39,7 +39,7 @@ class HttpSignAuth extends Behavior
     public function beforeAction($event)
     {
         $data = Yii::$app->request->get();
-        $user = ApiUserprofile::find()->where([
+        $user = Userprofile::find()->where([
             'token' => $data['token']
         ])->one();
         if (!$user) {
