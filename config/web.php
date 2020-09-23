@@ -80,10 +80,12 @@ $config = [
                         // 'sign-secret-key',
                         // 版本1
                         'site',
+                        'user'
                     ],
                     'pluralize' => false,// 是否启用复数形式，注意index的复数indices，开启后不直观
                     'extraPatterns' => [
-                        'GET index' => 'index', //手机端将文章评论对应的文章id给本后台
+                        'GET index' => 'index',
+                        'GET get_info' => 'get_info',
                     ],
                 ],
             ]

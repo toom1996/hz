@@ -15,6 +15,9 @@ use yii\web\NotFoundHttpException;
  */
 class OnAuthController extends ActiveController
 {
+
+    public $modelClass = '';
+
     /**
      * @return array
      */
