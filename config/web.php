@@ -42,15 +42,23 @@ $config = [
                 ],
             ],
         ],
+        'wechat' => [
+            'class' => 'jianyan\easywechat\Wechat',
+            'userOptions' => [],  // 用户身份类参数
+            'sessionParam' => 'wechatUser', // 微信用户信息将存储在会话在这个密钥
+            'returnUrlParam' => '_wechatReturnUrl', // returnUrl 存储在会话中
+            'rebinds' => [ // 自定义服务模块
+                // 'cache' => 'common\components\Cache',
+            ]
+        ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'POST wechat-login' => 'wechat-login',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
@@ -68,7 +76,7 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['127.0.0.1', '::1'],
     ];
 }
 
