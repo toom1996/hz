@@ -55,6 +55,17 @@ $config = [
                 // 'cache' => 'common\components\Cache',
             ]
         ],
+        /** ------ 格式化时间 ------ **/
+        'formatter' => [
+            'dateFormat' => 'yyyy-MM-dd',
+            'datetimeFormat' => 'yyyy-MM-dd HH:mm:ss',
+            'decimalSeparator' => ',',
+            'thousandSeparator' => ' ',
+            'currencyCode' => 'CNY',
+        ],
+        'debris' => [
+            'class' => 'common\components\Debris',
+        ],
         'db' => $db,
         'urlManager' => [
             'class' => 'yii\web\UrlManager',

@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use common\helpers\ResultDataHelper;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -71,7 +72,10 @@ class SiteController extends OnAuthController
      */
     public function actionLoginQrcode()
     {
-        $ticket_data = Yii::$app->wechat->app->qrcode->temporary();
+        $ticket_data = Yii::$app->wechat->app->qrcode->temporary('foo');
+        if ($error = Yii::$app->debris->getWechatError($ticket_data, false)) {
+            return ResultDataHelper::api(422, '系统繁忙，请刷新重试');
+        }
         $json_data = json_decode($ticket_data,true);
         return Yii::$app->wechat->app->qrcode->url($json_data['ticket']);
     }
