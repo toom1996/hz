@@ -2,6 +2,7 @@
 
 namespace common\components;
 
+use common\enums\CacheKeyEnum;
 use Yii;
 use yii\web\UnprocessableEntityHttpException;
 

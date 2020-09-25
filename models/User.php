@@ -2,7 +2,6 @@
 
 namespace app\models;
 
-use app\models\user\Userprofile;
 use yii\db\ActiveRecord;
 use yii\web\User as BaseUser;
 /**
@@ -58,7 +57,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
             [['username', 'password', 'token', 'name', 'city', 'country', 'province'], 'string', 'max' => 128],
             [['head_portrait', 'company_name'], 'string', 'max' => 256],
             [['openid', 'login_timestamp'], 'string', 'max' => 64],
-            [['inviter_id'], 'exist', 'skipOnError' => true, 'targetClass' => Userprofile::className(), 'targetAttribute' => ['inviter_id' => 'id']],
+            [['inviter_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['inviter_id' => 'id']],
             [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => Role::className(), 'targetAttribute' => ['role_id' => 'id']],
         ];
     }
@@ -324,7 +323,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
      */
     public function getInviter()
     {
-        return $this->hasOne(Userprofile::className(), ['id' => 'inviter_id']);
+        return $this->hasOne(User::className(), ['id' => 'inviter_id']);
     }
 
     /**
@@ -334,7 +333,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
      */
     public function getUserprofiles()
     {
-        return $this->hasMany(Userprofile::className(), ['inviter_id' => 'id']);
+        return $this->hasMany(User::className(), ['inviter_id' => 'id']);
     }
 
     /**

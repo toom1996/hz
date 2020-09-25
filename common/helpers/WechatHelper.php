@@ -21,8 +21,8 @@ class WechatHelper
      */
     public static function verifyToken($signature, $timestamp, $nonce)
     {
-        $config = Yii::$app->debris->configAll(true);
-        $token = $config['wechat_token'] ?? '';
+//        $config = Yii::$app->debris->configAll(true);
+        $token = ''; //微信公众号token
         $tmpArr = [$token, $timestamp, $nonce];
         sort($tmpArr, SORT_STRING);
         $tmpStr = implode($tmpArr);

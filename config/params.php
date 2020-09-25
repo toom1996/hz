@@ -8,7 +8,7 @@ return [
     'wechatConfig' => [
         'app_id' => '',
         'secret' => '',
-        'token' => '',
+        'token' => 'sisciiZiJCC6PuGOtFWwmDnIHMsZyX',
         'aes_key' => '', // 兼容与安全模式下请一定要填写！！！
     ],
 ];

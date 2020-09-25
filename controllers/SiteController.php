@@ -82,6 +82,7 @@ class SiteController extends OnAuthController
 
     /**
      * 微信扫码登录
+     * 判断当前是否关注，关注了
      * @return array|bool
      * @throws \Exception
      */

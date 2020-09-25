@@ -55,6 +55,17 @@ $config = [
                 // 'cache' => 'common\components\Cache',
             ]
         ],
+        /** ------ 服务层 ------ **/
+        'services' => [
+            'class' => 'services\Application',
+        ],
+        /** ------ redis配置 ------ **/
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => '127.0.0.1',
+            'port' => 6379,
+            'database' => 0,
+        ],
         /** ------ 格式化时间 ------ **/
         'formatter' => [
             'dateFormat' => 'yyyy-MM-dd',
