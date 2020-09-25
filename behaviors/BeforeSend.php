@@ -30,6 +30,9 @@ class BeforeSend extends Behavior
      */
     public function beforeSend($event)
     {
+        if (!Yii::$app->request->isAjax && Yii::$app->controller->module->id == 'gii') {
+            return true;
+        }
         $response = $event->sender;
         $response->data = [
             'code' => $response->statusCode,
