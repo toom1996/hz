@@ -30,8 +30,7 @@
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
-        },
-        "secure-http": false
+        }
     },
     "scripts": {
         "post-install-cmd": [
