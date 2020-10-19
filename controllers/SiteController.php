@@ -73,16 +73,15 @@ class SiteController extends OnAuthController
     public function actionLoginQrcode()
     {
         $ticket_data = Yii::$app->wechat->app->qrcode->temporary('foo');
-        if ($error = Yii::$app->debris->getWechatError($ticket_data, false)) {
-            return ResultDataHelper::api(422, '系统繁忙，请刷新重试');
-        }
-        $json_data = json_decode($ticket_data,true);
-        return Yii::$app->wechat->app->qrcode->url($json_data['ticket']);
+//        if ($error = Yii::$app->debris->getWechatError($ticket_data, false)) {
+//            return ResultDataHelper::api(422, '系统繁忙，请刷新重试');
+//        }
+        return Yii::$app->wechat->app->qrcode->url($ticket_data['ticket']);
     }
 
     /**
      * 微信扫码登录
-     * 判断当前是否关注，关注了
+     * 一直检测当前是否关注，关注了跳到后台，否则需要关注才
      * @return array|bool
      * @throws \Exception
      */
