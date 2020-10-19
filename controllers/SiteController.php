@@ -72,11 +72,14 @@ class SiteController extends OnAuthController
      */
     public function actionLoginQrcode()
     {
-        $ticket_data = Yii::$app->wechat->app->qrcode->temporary('foo');
+        $ticket_data = Yii::$app->wechat->app->qrcode->temporary('foo', 30);
+        $data['expire_date'] = $date = date('Y-m-d',time() + $ticket_data['expire_seconds']);
 //        if ($error = Yii::$app->debris->getWechatError($ticket_data, false)) {
 //            return ResultDataHelper::api(422, '系统繁忙，请刷新重试');
 //        }
-        return Yii::$app->wechat->app->qrcode->url($ticket_data['ticket']);
+        $data['qc_code_url'] = Yii::$app->wechat->app->qrcode->url($ticket_data['ticket']);
+        $date['timestamp'] = time(); //不知道是咋
+        return $data;
     }
 
     /**
