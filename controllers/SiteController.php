@@ -78,7 +78,7 @@ class SiteController extends OnAuthController
 //            return ResultDataHelper::api(422, '系统繁忙，请刷新重试');
 //        }
         $data['qc_code_url'] = Yii::$app->wechat->app->qrcode->url($ticket_data['ticket']);
-        $date['timestamp'] = time(); //不知道是咋
+        $data['timestamp'] = time(); //不知道是咋
         return $data;
     }
 
