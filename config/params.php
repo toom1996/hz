@@ -6,9 +6,9 @@ return [
     'senderName' => 'Example.com mailer',
     // 微信配置 具体可参考EasyWechat
     'wechatConfig' => [
-        'app_id' => 'wx4e99bb31f49db9f6', //测试
-        'secret' => 'c852912627fa9f6b3340b7d4e683dfab', //测试
-        'token' => 'sisciiZiJCC6PuGOtFWwmDnIHMsZyX', //微信公众号token
+        'app_id' => '', //测试
+        'secret' => '', //测试
+        'token' => '', //微信公众号token
         'aes_key' => '', // 兼容与安全模式下请一定要填写！！！
         /**
          * 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
