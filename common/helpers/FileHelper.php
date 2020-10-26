@@ -1,6 +1,6 @@
 <?php
 
-namespace common\helpers;
+namespace app\common\helpers;
 
 use yii\helpers\BaseFileHelper;
 use Yii;

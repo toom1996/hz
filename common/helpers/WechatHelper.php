@@ -1,6 +1,6 @@
 <?php
 
-namespace common\helpers;
+namespace app\common\helpers;
 
 use Yii;
 
@@ -22,7 +22,7 @@ class WechatHelper
     public static function verifyToken($signature, $timestamp, $nonce)
     {
 //        $config = Yii::$app->debris->configAll(true);
-        $token = ''; //微信公众号token
+        $token = Yii::$app->params['wechatConfig']['token'] ?? ''; //微信公众号token
         $tmpArr = [$token, $timestamp, $nonce];
         sort($tmpArr, SORT_STRING);
         $tmpStr = implode($tmpArr);

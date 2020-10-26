@@ -1,6 +1,6 @@
 <?php
 
-namespace common\helpers;
+namespace app\common\helpers;
 
 /**
  * 正则匹配验证

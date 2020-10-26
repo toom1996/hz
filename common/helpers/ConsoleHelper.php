@@ -5,7 +5,7 @@
  * Date: 2019/10/23
  * Time: 16:46
  */
-namespace common\helpers;
+namespace app\common\helpers;
 
 use yii\helpers\Console;
 

@@ -5,7 +5,7 @@
  * Date: 2019/4/25
  * Time: 11:57
  */
-namespace common\helpers;
+namespace app\common\helpers;
 
 use Yii;
 class OfficeHelper

@@ -1,5 +1,5 @@
 <?php
-namespace common\helpers;
+namespace app\common\helpers;
 
 use Yii;
 use yii\httpclient\Client;
