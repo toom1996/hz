@@ -102,7 +102,8 @@ $config = [
                         // 'sign-secret-key',
                         // 版本1
                         'site',
-                        'user'
+                        'user',
+                        'wechat-api',
                     ],
                     'pluralize' => false,// 是否启用复数形式，注意index的复数indices，开启后不直观
                     'extraPatterns' => [
@@ -117,6 +118,12 @@ $config = [
         ],
     ],
     'params' => $params,
+    'modules' => [
+        /** ------ 插件模块 ------ **/
+        'addons' => [
+            'class' => 'common\components\AddonsModule',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
