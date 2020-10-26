@@ -1,12 +1,12 @@
 <?php
 
-namespace common\controllers;
+namespace app\controllers;
 
+use common\helpers\WechatHelper;
 use EasyWeChat\Kernel\Messages\Text;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use common\helpers\WechatHelper;
 
 /**
  * 接收微信消息处理控制器
