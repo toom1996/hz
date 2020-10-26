@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use common\helpers\WechatHelper;
+use app\common\helpers\WechatHelper;
 use EasyWeChat\Kernel\Messages\Text;
 use Yii;
 use yii\web\Controller;
@@ -23,6 +23,11 @@ class WechatApiController extends Controller
      * @var bool
      */
     public $enableCsrfValidation = false;
+
+    public function demo()
+    {
+        return true;
+    }
 
     /**
      * 处理微信消息
